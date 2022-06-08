@@ -163,12 +163,12 @@
     
 ### Classic ports
 
-    • 22 = SSH (Secure Shell) - log into a Linux instance
-    • 21 = FTP (File Transport Protocol) – upload files into a file share
-    • 22 = SFTP (Secure File Transport Protocol) – upload files using SSH
-    • 80 = HTTP – access unsecured websites
-    • 443 = HTTPS – access secured websites
-    • 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
+   • 22 = SSH (Secure Shell) - log into a Linux instance
+   • 21 = FTP (File Transport Protocol) – upload files into a file share
+   • 22 = SFTP (Secure File Transport Protocol) – upload files using SSH
+   • 80 = HTTP – access unsecured websites
+   • 443 = HTTPS – access secured websites
+   • 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
     
 ### Connecting to EC2 using SSH, Putty Tool and Instance Connect
     1. Using SSH : Watch the lecture (Mac/Linux, windows>=10)
@@ -181,14 +181,14 @@
         • Need to make sure the port 22 is still opened!
     
 ### EC2 Instances Purchasing Options
-    • On-Demand Instances: short workload, predictable pricing
-    • Reserved: (MINIMUM 1 year)
-    • Reserved Instances: long workloads 
-    • Convertible Reserved Instances: long workloads with flexible instances
-    • Scheduled Reserved Instances: example – every Thursday between 3 and 6 pm
-    • Spot Instances: short workloads, cheap, can lose instances (less reliable)
-    • Dedicated Hosts: book an entire physical server, control instance placement
-    • Dedicated Instances: no other customers will share your hardware
+   • On-Demand Instances: short workload, predictable pricing
+   • Reserved: (MINIMUM 1 year)
+   • Reserved Instances: long workloads 
+   • Convertible Reserved Instances: long workloads with flexible instances
+   • Scheduled Reserved Instances: example – every Thursday between 3 and 6 pm
+   • Spot Instances: short workloads, cheap, can lose instances (less reliable)
+   • Dedicated Hosts: book an entire physical server, control instance placement
+   • Dedicated Instances: no other customers will share your hardware
     
     Hotel Example :
     
@@ -198,18 +198,18 @@
     • Dedicated Hosts: We book an entire building of the resort
 
 ### Responsibility Model for Customers :
-    • Security Groups rules
-    • Operating-system patches and updates
-    * Software and utilities installed on the EC2 instance
-    • IAM Roles assigned to EC2 & IAM user access management
-    • Data security on your instance
+   • Security Groups rules
+   • Operating-system patches and updates
+   * Software and utilities installed on the EC2 instance
+   • IAM Roles assigned to EC2 & IAM user access management
+   * Data security on your instance
     
 ### EC2 Section – Summary 
-    • EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
-    • Security Groups: Firewall attached to the EC2 instance
-    • EC2 User Data: Script launched at the first start of an instance
-    • SSH: start a terminal into our EC2 Instances (port 22)
-    • EC2 Instance Role: link to IAM roles
-    • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
+   • EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
+   • Security Groups: Firewall attached to the EC2 instance
+   • EC2 User Data: Script launched at the first start of an instance
+   * SSH: start a terminal into our EC2 Instances (port 22)
+   • EC2 Instance Role: link to IAM roles
+   • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
 
     
