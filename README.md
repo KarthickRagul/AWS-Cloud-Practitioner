@@ -85,9 +85,9 @@
 
 ### Multi Factor Authentication - MFA
 
-   • Users have access to your account and can possibly change configurations or delete resources in your AWS account
-   • You want to protect your Root Accounts and IAM users
-   • MFA = password you know + security device you own
+    • Users have access to your account and can possibly change configurations or delete resources in your AWS account
+    • You want to protect your Root Accounts and IAM users
+    • MFA = password you know + security device you own
     
 ### IAM Roles for Services 
     • Some AWS service will need to perform actions on your behalf
@@ -106,25 +106,25 @@
 
 ### IAM Guidelines & Best Practices
 
-   • Don’t use the root account except for AWS account setup
-   • One physical user = One AWS user
-   • Assign users to groups and assign permissions to groups
-   • Create a strong password policy
-   • Use and enforce the use of Multi Factor Authentication (MFA)
-   • Create and use Roles for giving permissions to AWS services
-   • Use Access Keys for Programmatic Access (CLI / SDK)
-   • Audit permissions of your account with the IAM Credentials Report
-   • Never share IAM users & Access Keys
+    • Don’t use the root account except for AWS account setup
+    • One physical user = One AWS user
+    • Assign users to groups and assign permissions to groups
+    • Create a strong password policy
+    • Use and enforce the use of Multi Factor Authentication (MFA)
+    • Create and use Roles for giving permissions to AWS services
+    • Use Access Keys for Programmatic Access (CLI / SDK)
+    • Audit permissions of your account with the IAM Credentials Report
+    • Never share IAM users & Access Keys
 
 ### IAM Section – Summary 
 
-   • Users: mapped to a physical user, has a password for AWS Console
-   • Groups: contains users only 
-   • Policies: JSON document that outlines permissions for users or groups
-   • Roles: for EC2 instances or AWS services
-   • Security: MFA + Password Policy
-   • Access Keys: access AWS using the CLI or SDK
-   • Audit: IAM Credential Reports & IAM Access Advisor
+    • Users: mapped to a physical user, has a password for AWS Console
+    • Groups: contains users only 
+    • Policies: JSON document that outlines permissions for users or groups
+    • Roles: for EC2 instances or AWS services
+    • Security: MFA + Password Policy
+    • Access Keys: access AWS using the CLI or SDK
+    • Audit: IAM Credential Reports & IAM Access Advisor
        
 ## EC2 Instances
 
@@ -167,12 +167,12 @@
     
 ### Classic ports
 
-   • 22 = SSH (Secure Shell) - log into a Linux instance
-   • 21 = FTP (File Transport Protocol) – upload files into a file share
-   • 22 = SFTP (Secure File Transport Protocol) – upload files using SSH
-   • 80 = HTTP – access unsecured websites
-   • 443 = HTTPS – access secured websites
-   • 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
+    • 22 = SSH (Secure Shell) - log into a Linux instance
+    • 21 = FTP (File Transport Protocol) – upload files into a file share
+    • 22 = SFTP (Secure File Transport Protocol) – upload files using SSH
+    • 80 = HTTP – access unsecured websites
+    • 443 = HTTPS – access secured websites
+    • 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
     
 ### Connecting to EC2 using SSH, Putty Tool and Instance Connect
 
@@ -187,14 +187,14 @@
     
 ### EC2 Instances Purchasing Options
 
-   • On-Demand Instances: short workload, predictable pricing
-   • Reserved: (MINIMUM 1 year)
-   • Reserved Instances: long workloads 
-   • Convertible Reserved Instances: long workloads with flexible instances
-   • Scheduled Reserved Instances: example – every Thursday between 3 and 6 pm
-   • Spot Instances: short workloads, cheap, can lose instances (less reliable)
-   • Dedicated Hosts: book an entire physical server, control instance placement
-   • Dedicated Instances: no other customers will share your hardware
+    • On-Demand Instances: short workload, predictable pricing
+    • Reserved: (MINIMUM 1 year)
+    • Reserved Instances: long workloads 
+    • Convertible Reserved Instances: long workloads with flexible instances
+    • Scheduled Reserved Instances: example – every Thursday between 3 and 6 pm
+    • Spot Instances: short workloads, cheap, can lose instances (less reliable)
+    • Dedicated Hosts: book an entire physical server, control instance placement
+    • Dedicated Instances: no other customers will share your hardware
     
     Hotel Example :
     
@@ -205,19 +205,19 @@
 
 ### Responsibility Model for Customers :
 
-   • Security Groups rules
-   • Operating-system patches and updates
-   * Software and utilities installed on the EC2 instance
-   • IAM Roles assigned to EC2 & IAM user access management
-   * Data security on your instance
+    • Security Groups rules
+    • Operating-system patches and updates
+    * Software and utilities installed on the EC2 instance
+    • IAM Roles assigned to EC2 & IAM user access management
+    * Data security on your instance
     
 ### EC2 Section – Summary 
 
-   • EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
-   • Security Groups: Firewall attached to the EC2 instance
-   • EC2 User Data: Script launched at the first start of an instance
-   * SSH: start a terminal into our EC2 Instances (port 22)
-   • EC2 Instance Role: link to IAM roles
-   • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
+    • EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
+    • Security Groups: Firewall attached to the EC2 instance
+    • EC2 User Data: Script launched at the first start of an instance
+    * SSH: start a terminal into our EC2 Instances (port 22)
+    • EC2 Instance Role: link to IAM roles
+    • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
 
     
