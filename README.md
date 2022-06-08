@@ -84,6 +84,7 @@
    * These policies define the permissions of the users
 
 ### Multi Factor Authentication - MFA
+
    • Users have access to your account and can possibly change configurations or delete resources in your AWS account
    • You want to protect your Root Accounts and IAM users
    • MFA = password you know + security device you own
@@ -104,24 +105,26 @@
           • You can use this information to revise your policies
 
 ### IAM Guidelines & Best Practices
-    • Don’t use the root account except for AWS account setup
-    • One physical user = One AWS user
-    • Assign users to groups and assign permissions to groups
-    • Create a strong password policy
-    • Use and enforce the use of Multi Factor Authentication (MFA)
-    • Create and use Roles for giving permissions to AWS services
-    • Use Access Keys for Programmatic Access (CLI / SDK)
-    • Audit permissions of your account with the IAM Credentials Report
-    • Never share IAM users & Access Keys
+
+   • Don’t use the root account except for AWS account setup
+   • One physical user = One AWS user
+   • Assign users to groups and assign permissions to groups
+   • Create a strong password policy
+   • Use and enforce the use of Multi Factor Authentication (MFA)
+   • Create and use Roles for giving permissions to AWS services
+   • Use Access Keys for Programmatic Access (CLI / SDK)
+   • Audit permissions of your account with the IAM Credentials Report
+   • Never share IAM users & Access Keys
 
 ### IAM Section – Summary 
-    • Users: mapped to a physical user, has a password for AWS Console
-    • Groups: contains users only 
-    • Policies: JSON document that outlines permissions for users or groups
-    • Roles: for EC2 instances or AWS services
-    • Security: MFA + Password Policy
-    • Access Keys: access AWS using the CLI or SDK
-    • Audit: IAM Credential Reports & IAM Access Advisor
+
+   • Users: mapped to a physical user, has a password for AWS Console
+   • Groups: contains users only 
+   • Policies: JSON document that outlines permissions for users or groups
+   • Roles: for EC2 instances or AWS services
+   • Security: MFA + Password Policy
+   • Access Keys: access AWS using the CLI or SDK
+   • Audit: IAM Credential Reports & IAM Access Advisor
        
 ## EC2 Instances
 
@@ -146,6 +149,7 @@
     7. Bootstrap script (configure at first launch): EC2 User Data 
     
 ### EC2 Instance types :
+
     Reference Link for types and use cases : https://aws.amazon.com/ec2/instance-types/
     
 ### Introduction to Security Groups
@@ -171,6 +175,7 @@
    • 3389 = RDP (Remote Desktop Protocol) – log into a Windows instance
     
 ### Connecting to EC2 using SSH, Putty Tool and Instance Connect
+
     1. Using SSH : Watch the lecture (Mac/Linux, windows>=10)
     2. Using Putty Tool : Watch the lecture(All version of windows)
     3. EC2 Instance Connect : (All types of OS)
@@ -181,6 +186,7 @@
         • Need to make sure the port 22 is still opened!
     
 ### EC2 Instances Purchasing Options
+
    • On-Demand Instances: short workload, predictable pricing
    • Reserved: (MINIMUM 1 year)
    • Reserved Instances: long workloads 
@@ -198,6 +204,7 @@
     • Dedicated Hosts: We book an entire building of the resort
 
 ### Responsibility Model for Customers :
+
    • Security Groups rules
    • Operating-system patches and updates
    * Software and utilities installed on the EC2 instance
@@ -205,6 +212,7 @@
    * Data security on your instance
     
 ### EC2 Section – Summary 
+
    • EC2 Instance: AMI (OS) + Instance Size (CPU + RAM) + Storage + security groups + EC2 User Data
    • Security Groups: Firewall attached to the EC2 instance
    • EC2 User Data: Script launched at the first start of an instance
