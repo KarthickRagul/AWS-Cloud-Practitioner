@@ -89,6 +89,17 @@
     • You want to protect your Root Accounts and IAM users
     • MFA = password you know + security device you own
     
+### How can users access AWS ?
+• To access AWS, you have three options:
+    • AWS Management Console (protected by password + MFA)
+    • AWS Command Line Interface (CLI): protected by access keys
+    • AWS Software Developer Kit (SDK) - for code: protected by access keys
+• Access Keys are generated through the AWS Console
+• Users manage their own access keys
+• Access Keys are secret, just like a password. Don’t share them
+• Access Key ID ~= username
+• Secret Access Key ~= password
+
 ### IAM Roles for Services 
     • Some AWS service will need to perform actions on your behalf
     • To do so, we will assign permissions to AWS services with IAM Roles
