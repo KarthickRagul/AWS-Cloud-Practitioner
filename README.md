@@ -231,8 +231,8 @@
     • EC2 Instance Role: link to IAM roles
     • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
 
-### EC2 Instance Storage Section
-## EC2 Instance Storage - Summary 
+## EC2 Instance Storage Section
+### EC2 Instance Storage - Summary 
 
     • EBS volumes: 
        • network drives attached to one EC2 instance at a time
@@ -247,7 +247,7 @@
 
 ![EBS vs EFS](https://user-images.githubusercontent.com/62194896/201830238-6d9dfddf-41b8-4cf1-9212-740612899576.png)
 
-## Shared Responsibility Model for EC2 Storage
+### Shared Responsibility Model for EC2 Storage
     AWS :
         • Infrastructure
         • Replication for data for EBS volumes & EFS drives
