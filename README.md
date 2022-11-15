@@ -231,4 +231,33 @@
     • EC2 Instance Role: link to IAM roles
     • Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
 
-    
+### EC2 Instance Storage Section
+## EC2 Instance Storage - Summary 
+
+    • EBS volumes: 
+       • network drives attached to one EC2 instance at a time
+       • Mapped to an Availability Zones
+       • Can use EBS Snapshots for backups / transferring EBS volumes across AZ
+    • AMI: create ready-to-use EC2 instances with our customizations
+    • EC2 Image Builder: automatically build, test and distribute AMIs
+    • EC2 Instance Store:
+       • High performance hardware disk attached to our EC2 instance
+       • Lost if our instance is stopped / terminated
+    • EFS: network file system, can be attached to 100s of instances in a region
+
+![EBS vs EFS](https://user-images.githubusercontent.com/62194896/201830238-6d9dfddf-41b8-4cf1-9212-740612899576.png)
+
+## Shared Responsibility Model for EC2 Storage
+    AWS :
+        • Infrastructure
+        • Replication for data for EBS volumes & EFS drives
+        • Replacing faulty hardware
+        • Ensuring their employees cannot access your data
+        
+    Customer :
+        • Setting up backup / snapshot procedures
+        • Setting up data encryption
+        • Responsibility of any data on the drives
+        • Understanding the risk of using EC2 Instance Store
+        
+        
