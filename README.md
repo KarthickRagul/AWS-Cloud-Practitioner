@@ -334,7 +334,7 @@
 ### S3 Storage Classes: 
     • Standard, IA, 1Z-IA, Intelligent, Glacier, Glacier Deep Archive (Refer pdf for more info)
     
-    ![S3 storage classes](https://user-images.githubusercontent.com/62194896/202256528-2dbd48c3-e924-4fe8-9c97-46b22d86506b.png)
+  ![S3 storage classes](https://user-images.githubusercontent.com/62194896/202256528-2dbd48c3-e924-4fe8-9c97-46b22d86506b.png)
 
     
 ### S3 Lifecycle Rules: 
@@ -357,7 +357,7 @@
 ### Snow Family: 
     • import data onto S3 through a physical device, edge computing
     
-    ![AWS Snow Family](https://user-images.githubusercontent.com/62194896/202257394-0517cfa4-5c3b-4855-889f-1711d8452116.png)
+  ![AWS Snow Family](https://user-images.githubusercontent.com/62194896/202257394-0517cfa4-5c3b-4855-889f-1711d8452116.png)
 
     
     • OpsHub: desktop application to manage Snow Family devices
