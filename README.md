@@ -289,3 +289,82 @@
     • Scale EC2 instances based on the demand on your system, replace unhealthy
     • Integrated with the ELB
 
+## Amazon S3 – Summary 
+    • It’s(S3) advertised as ”infinitely scaling” storage 
+### S3 Use cases :
+         • Backup and storage 
+         • Disaster Recovery 
+         • Archive 
+         • Hybrid Cloud storage 
+         • Application hosting 
+         • Media hosting 
+         • Data lakes & big data analytics 
+         • Software delivery 
+         • Static website
+### Buckets vs Objects: 
+    • global unique name, tied to a region 
+    • Naming convention
+        • No uppercase
+        • No underscore
+        • 3-63 characters long
+        • Not an IP
+        • Must start with lowercase letter or number
+    • Objects (files) have a Key
+    • The key is composed of prefix + object name 
+    • s3://my-bucket/my_folder1/another_folder/my_file.txt
+### S3 security: 
+    • IAM policy, S3 Bucket Policy (public access), S3 Encryption
+### S3 Websites: 
+    • host a static website on Amazon S3
+    • If you get a 403 (Forbidden) error, make sure the bucket policy allows public reads!
+### S3 Versioning: 
+    • multiple versions for files, prevent accidental deletes
+    • It is enabled at the bucket level
+### S3 Access Logs: 
+    • log requests made within your S3 bucket
+### S3 Replication: 
+    • Must enable versioning in source and destination
+    • Cross Region Replication (CRR)
+    • Same Region Replication (SRR)
+    • Buckets can be in different accounts
+    • Copying is asynchronous
+    • Must give proper IAM permissions to S3
+    • CRR - Use cases: compliance, lower latency access, replication across accounts
+    • SRR – Use cases: log aggregation, live replication
+### S3 Storage Classes: 
+    • Standard, IA, 1Z-IA, Intelligent, Glacier, Glacier Deep Archive (Refer pdf for more info)
+    
+    ![S3 storage classes](https://user-images.githubusercontent.com/62194896/202256528-2dbd48c3-e924-4fe8-9c97-46b22d86506b.png)
+
+    
+### S3 Lifecycle Rules: 
+    • transition objects between classes, it is automateable
+### S3 Glacier Vault Lock / S3 Object Lock: 
+    • WORM (Write Once Read Many)
+### S3 Shared Responsibility model 
+    • AWS :
+         • Infrastructure (global security, durability, availability, sustain concurrent loss of data in two facilities)
+         • Configuration and vulnerability analysis 
+         • Compliance validation
+    • Customer :
+         • S3 Versioning
+         • S3 Bucket Policies
+         • S3 Replication Setup
+         • Logging and Monitoring
+         • S3 Storage Classes
+         • Data encryption at rest and in transit
+
+### Snow Family: 
+    • import data onto S3 through a physical device, edge computing
+    
+    ![AWS Snow Family](https://user-images.githubusercontent.com/62194896/202257394-0517cfa4-5c3b-4855-889f-1711d8452116.png)
+
+    
+    • OpsHub: desktop application to manage Snow Family devices
+### Storage Gateway: 
+    • hybrid solution to extend on-premises storage to S3
+    • Types of Storage Gateway:
+         • File Gateway 
+         • Volume Gateway
+         • Tape Gateway
+
