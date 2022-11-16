@@ -260,4 +260,32 @@
         • Responsibility of any data on the drives
         • Understanding the risk of using EC2 Instance Store
         
-        
+## Elastic Load Balancing & Auto Scaling Groups Section
+### Scalability & High Availability
+    • Scalability means that an application / system can handle greater loads by adapting. 
+    • There are two kinds of scalability:
+        • Vertical Scalability ( Vertical Scalability means increasing the size of the instance )
+        • Horizontal Scalability (= elasticity) ( Horizontal Scalability means increasing the number of instances / systems for your application )
+    • Scalability is linked but different to High Availability
+
+### High Availability 
+    • High Availability usually goes hand in hand with horizontal scaling
+    • High availability means running your application / system in at least 2 Availability Zones
+    • The goal of high availability is to survive a data center loss (disaster)
+    • High Availability: Run instances for the same application across multi AZ
+      • Auto Scaling Group multi AZ
+      • Load Balancer multi AZ
+
+### Scalability vs Elasticity (vs Agility)
+    • Scalability: ability to accommodate a larger load by making the hardware stronger (scale up), or by adding nodes (scale out)
+    • Elasticity: once a system is scalable, elasticity means that there will be some “auto-scaling” so that the system can scale based on the load. This is “cloud-        friendly”: pay-per-use, match demand, optimize costs
+    • Agility: (not related to scalability - distractor) new IT resources are only a click away, which means that you reduce the time to make those resources available      to your developers from weeks to just minutes.
+### Elastic Load Balancers (ELB)
+    • Distribute traffic across backend EC2 instances, can be Multi-AZ
+    • Supports health checks
+    • 3 types: Application LB (HTTP – L7), Network LB (TCP – L4), Classic LB (old)
+### Auto Scaling Groups (ASG)
+    • Implement Elasticity for your application, across multiple AZ
+    • Scale EC2 instances based on the demand on your system, replace unhealthy
+    • Integrated with the ELB
+
