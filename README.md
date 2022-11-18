@@ -451,3 +451,53 @@
                   • Comments have likes from users 
                   • Users share and like posts
           • Great for knowledge graphs (Wikipedia), fraud detection, recommendation engines, social networking
+## Other Compute Section
+### Other Compute - Summary
+          • Docker: container technology to run applications
+                 • Docker is a software development platform to deploy apps 
+                 • Apps are packaged in containers that can be run on any OS 
+                 • Apps run the same, regardless of where they’re run 
+                      • Any machine 
+                      • No compatibility issues 
+                      • Predictable behavior 
+                      • Less work 
+                      • Easier to maintain and deploy 
+                      • Works with any language, any OS, any tech
+          • ECS: run Docker containers on EC2 instances
+                      • ECS = Elastic Container Service
+                      • Launch Docker containers on AWS
+                      • You must provision & maintain the infrastructure (the EC2 instances)
+          • Fargate: 
+                      • Launch Docker containers on AWS
+                      • You do not provision the infrastructure (no EC2 instances to manage)– simpler!
+                      • Serverless offering
+          • ECR(Amazon Elestice Container Registry): Private Docker Images Repository, Docker images are stored in Docker Repositories
+            Note : • Serverless does not mean there are no servers…
+          • Batch: run batch jobs on AWS across managed EC2 instances
+                     • Fully managed batch processing at any scale
+                     • Batch will dynamically launch EC2 instances or Spot Instances
+                     • Batch jobs are defined as Docker images and run on ECS
+   ![Batch vs Lambda](https://user-images.githubusercontent.com/62194896/202719577-e377a280-ecb1-48c6-92e0-3093076cd5a0.png)
+
+          • Lightsail: predictable & low pricing for simple application & DB stacks
+                     • Virtual servers, storage, databases, and networking 
+                     • Use cases:
+                         • Simple web applications (has templates for LAMP, Nginx, MEAN, Node.js…)
+                         • Websites (templates for WordPress, Magento, Plesk, Joomla)
+                         • Dev / Test environment 
+  ### Lambda Summary
+  ![Why Lambda](https://user-images.githubusercontent.com/62194896/202720410-e8e0a9f9-86b7-46b7-bceb-0e7e5ac2d827.png)
+
+          • Lambda is Serverless, Function as a Service, seamless scaling, reactive
+          • Lambda Billing:
+             • By the time run x by the RAM provisioned
+             • By the number of invocations
+             • Based on calls and duration
+          • Language Support: many programming languages except (arbitrary) Docker
+          • Invocation time: up to 15 minutes
+          • Event-Driven: functions get invoked by AWS when needed
+          • Use cases:
+             • Create Thumbnails for images uploaded onto S3
+             • Run a Serverless cron job
+          • API Gateway: expose Lambda functions as HTTP API
+             
