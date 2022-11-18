@@ -371,7 +371,7 @@
 ## Databases and Analytics Section
 
 ### Databases & Shared Responsibility on AWS
-                                                                                                                                                                           • AWS offers use to manage different databases
+    • AWS offers use to manage different databases
     • Benefits include:
         • Quick Provisioning, High Availability, Vertical and Horizontal Scaling
         • Automated Backup & Restore, Operations, Upgrades
