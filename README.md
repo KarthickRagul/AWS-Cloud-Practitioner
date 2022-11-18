@@ -368,3 +368,86 @@
          • Volume Gateway
          • Tape Gateway
 
+## Databases and Analytics Section
+
+### Databases & Shared Responsibility on AWS
+                                                                                                                                                                           • AWS offers use to manage different databases
+    • Benefits include:
+        • Quick Provisioning, High Availability, Vertical and Horizontal Scaling
+        • Automated Backup & Restore, Operations, Upgrades
+        • Operating System Patching is handled by AWS
+        • Monitoring, alerting
+    • Note: many databases technologies could be run on EC2, but you must handle yourself the resiliency, backup, patching, high availability, fault tolerance, scaling…
+    
+### Databases & Analytics Summary in AWS
+    • Relational Databases - OLTP: RDS & Aurora (SQL)
+           • RDS allows you to create databases in the cloud that are managed by AWS
+                 • Postgres
+                 • MySQL
+                 • MariaDB
+                 • Oracle
+                 • Microsoft SQL Server
+                 • Aurora (AWS Proprietary database)
+           • Amazon Aurora
+                 • Aurora is a proprietary technology from AWS (not open sourced)
+                 • PostgreSQL and MySQL are both supported as Aurora DB 
+                 • Aurora is “AWS cloud optimized” and claims 5x performance improvement over MySQL on RDS, over 3x the performance of Postgres on RDS
+                 • Aurora storage automatically grows in increments of 10GB, up to 64 TB. 
+                 • Aurora costs more than RDS (20% more) – but is more efficient
+                 • Not in the free tier
+    • RDS Deployments : Differences between Multi-AZ, Read Replicas, Multi-Region
+    • In-memory Database: ElastiCache
+                 • Caches are in-memory databases with high performance, low latency
+                 • Helps reduce load off databases for read intensive workloads
+    • Key/Value Database: DynamoDB (serverless) & DAX (cache for DynamoDB)
+                 • NoSQL database - not a relational database 
+                 • Scales to massive workloads, distributed “serverless” database
+                 • Single-digit millisecond latency – low latency retrieval
+                 • Integrated with IAM for security, authorization and administration
+                 * DAX:
+                     • Fully Managed in-memory cache for DynamoDB
+                     • 10x performance improvement – single- digit millisecond latency to microseconds latency – when accessing your DynamoDB tables
+    • Warehouse - OLAP: Redshift (SQL) 
+                 • Redshift is based on PostgreSQL, but it’s not used for OLTP
+                 • It’s OLAP – online analytical processing (analytics and data warehousing)
+                 • Load data once every hour, not every second
+                 • 10x better performance than other data warehouses, scale to PBs of data
+                 • Columnar storage of data (instead of row based)
+    • Hadoop Cluster: EMR
+                 • EMR stands for “Elastic MapReduce”
+                 • EMR helps creating Hadoop clusters (Big Data) to analyze and process vast amount of data
+                 • The clusters can be made of hundreds of EC2 instances
+                 • Use cases: data processing, machine learning, web indexing, big data…
+    • Athena: query data on Amazon S3 (serverless & SQL) 
+                 • Fully Serverless database with SQL capabilities
+                 • Used to query data in S3
+                 • Use Case: one-time SQL queries, serverless queries on S3, log analytics
+    • QuickSight: dashboards on your data (serverless)
+                 • Serverless machine learning-powered business intelligence service to create interactive dashboards
+                 • Use cases:
+                         • Business analytics
+                         • Building visualizations
+                         • Perform ad-hoc analysis
+                         • Get business insights using data
+    • DocumentDB: “Aurora for MongoDB” (JSON – NoSQL database)
+    • Amazon QLDB: Financial Transactions Ledger (immutable journal, cryptographically verifiable)
+                • QLDB stands for ”Quantum Ledger Database”
+                • A ledger is a book recording financial transactions
+                • Fully Managed, Serverless, High available, Replication across 3 AZ
+                • Used to review history of all the changes made to your application data over time 
+                • Immutable system: no entry can be removed or modified, cryptographically verifiable
+                • It has only centralization component and no decentralization component
+    • Amazon Managed Blockchain: managed Hyperledger Fabric & Ethereum blockchains
+    • Glue: Managed ETL (Extract Transform Load) and Data Catalog service
+    • Database Migration: DMS
+               • Supports:
+                    • Homogeneous migrations: ex Oracle to oracle
+                    • Heterogeneous migrations: ex Microsoft SQL Server to Aurora
+    • Neptune: graph database
+          • Fully managed graph database 
+          • A popular graph dataset would be a social network 
+                  • Users have friends 
+                  • Posts have comments 
+                  • Comments have likes from users 
+                  • Users share and like posts
+          • Great for knowledge graphs (Wikipedia), fraud detection, recommendation engines, social networking
