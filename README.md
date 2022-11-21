@@ -575,4 +575,44 @@
     • AWS OpsWorks = Managed Chef & Puppet
     • It’s an alternative to AWS SSM
     
+## Global Infrastructure Section
+    • A global application is an application deployed in multiple geographies
+    • On AWS: this could be Regions and / or Edge Locations
+    • Advantages :
+        • Decreased Latency
+        • Disaster Recovery (DR)
+        • Attack protection
+###  Global DNS: Route 53
+    • Great to route users to the closest deployment with least latency
+    • Great for disaster recovery strategies
+    • Route53 is a Managed DNS (Domain Name System)
+    • DNS is a collection of rules and records which helps clients understand how to reach a server through URLs
+    • Types of Routing 53 policies:
+              • Simple Routing Policy (No health checks)
+              • Weighted Routing policy
+              • Latency Routing policy
+              • Failover Routing policy
+### Global Content Delivery Network (CDN): CloudFront
+    • Replicate part of your application to AWS Edge Locations – decrease latency
+    • Cache common requests – improved user experience and decreased latency
+    • Content Delivery Network (CDN)
+    • Improves read performance, content is cached at the edge
+    • Improves users experience
+    • 216 Point of Presence globally (edge locations)
+    • DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall
+    • Cloudfront origins:
+         • S3 Bucket
+         • HTTP 
+### S3 Transfer Acceleration
+    • Accelerate global uploads & downloads into Amazon S3
+### AWS Global Accelerator:
+    • Improve global application availability and performance using the AWS global network
+    • 2 Anycast IP are created for your application and traffic is sent through Edge Locations
+    • The Edge locations send the traffic to your application
+### AWS Outposts:
+    • Deploy Outposts Racks in your own Data Centers to extend AWS services
+    • AWS Outposts are “server racks” that offers the same AWS infrastructure, services, APIs & tools to build your own applications on-premises just as in the cloud
+    • AWS will setup and manage “Outposts Racks” within your on-premises infrastructure and you can start leveraging AWS services on-premises
+    • You are responsible for the Outposts Rack physical security
+
 
