@@ -614,5 +614,20 @@
     • AWS Outposts are “server racks” that offers the same AWS infrastructure, services, APIs & tools to build your own applications on-premises just as in the cloud
     • AWS will setup and manage “Outposts Racks” within your on-premises infrastructure and you can start leveraging AWS services on-premises
     • You are responsible for the Outposts Rack physical security
-
-
+## Cloud Integration Section
+### SQS:
+    • Queue service in AWS
+    • Multiple Producers, messages are kept up to 14 days
+    • Multiple Consumers share the read and delete messages when done
+    • Used to decouple applications in AWS
+### SNS: 
+    • Notification service in AWS
+    • Subscribers: Email, Lambda, SQS, HTTP, Mobile…
+    • Multiple Subscribers, send all messages to all of them
+    • No message retention
+    • Both SNS and SQS are used for decoupling the applications
+### Kinesis: 
+    • Real-time data streaming, persistence and analysis
+### Amazon MQ:
+    • Managed Apache MQ in the cloud (MQTT, AMQP.. protocols)
+    • Useful when migrating to the cloud
