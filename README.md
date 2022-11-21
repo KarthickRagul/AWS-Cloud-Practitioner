@@ -501,3 +501,78 @@
              • Run a Serverless cron job
           • API Gateway: expose Lambda functions as HTTP API
              
+### Deploying and Managing Infrastructure at Scale Section
+### CloudFormation
+         • CloudFormation: (AWS only)
+         • Infrastructure as Code, works with almost all of AWS resources
+         • Repeat across Regions & Accounts
+         • CloudFormation creates those for you, in the right order, with the exact configuration that you specify
+![Cloud formation](https://user-images.githubusercontent.com/62194896/202962879-26a6b003-cfa8-4eec-b9b2-43dd08cff3b0.png)
+
+### Beanstalk: (AWS only)
+     • Platform as a Service (PaaS), limited to certain programming languages or Docker
+     • Deploy code consistently with a known architecture: ex, ALB + EC2 + RDS 
+     • Elastic Beanstalk is a developer centric view of deploying an application on AWS
+     • It uses all the component’s we’ve seen before:           EC2, ASG, ELB, RDS, etc… 
+     • But it’s all in one view that’s easy to make sense of! 
+     • We still have full control over the configuration • Beanstalk = Platform as a Service (PaaS) 
+     • Beanstalk is free but you pay for the underlying instances
+     • Just the application code is the responsibility of the developer
+     • Elastic Beanstalk – Health Monitoring
+        • Health agent pushes metrics to CloudWatch
+        • Checks for app health, publishes health events
+### CodeDeploy (hybrid): deploy & upgrade any application onto servers
+    • We want to deploy our application automatically
+    • Works with EC2 Instances
+    • Works with On-Premises Servers
+    • Hybrid service
+### CodeCommit :
+    • Before pushing the application code to servers, it needs to be stored somewhere
+    • Developers usually store code in a repository, using the Git technology
+    • A famous public offering is GitHub, AWS’ competing product is CodeCommit
+    • CodeCommit:
+         • Source-control service that hosts Git-based repositories
+         • Makes it easy to collaborate with others on code
+         • The code changes are automatically versioned 
+    • Benefits: 
+         • Fully managed
+         • Scalable & highly available
+         • Private, Secured, Integrated with AWS
+### AWS CodeBuild
+    • Code building service in the cloud (name is obvious)
+    • Compiles source code, run tests, and produces packages that are ready to be deployed (by CodeDeploy for example)
+### AWS CodePipeline
+    • Orchestrate the different steps to have the code automatically pushed to production 
+    • Code => Build => Test => Provision => Deploy
+    • Basis for CICD (Continuous Integration & Continuous Delivery)
+    • Benefits:
+         • Fully managed, compatible with CodeCommit, CodeBuild, CodeDeploy, Elastic Beanstalk, CloudFormation, GitHub, 3rd-party services (GitHub…) & custom plugins…
+         • Fast delivery & rapid updates
+### AWS CodeArtifact
+    • Software packages depend on each other to be built (also called code dependencies), and new ones are created
+    • Storing and retrieving these dependencies is called artifact management
+    • Traditionally you need to setup your own artifact management system
+    • Works with common dependency management tools such as Maven, Gradle, npm, yarn, twine, pip, and NuGet
+    • Developers and CodeBuild can then retrieve dependencies straight from CodeArtifact
+### AWS CodeStar
+    • Unified UI to easily manage software development activities in one place
+    • “Quick way” to get started to correctly set-up CodeCommit, CodePipeline, CodeBuild, CodeDeploy, Elastic Beanstalk, EC2, etc… 
+    • Can edit the code ”in-the-cloud” using AWS Cloud9
+### AWS Cloud9 
+    • AWS Cloud9 is a cloud IDE (Integrated Development Environment) for writing, running and debugging code
+    • AWS Cloud9 also allows for code collaboration in real-time (pair programming)
+### Systems Manager (hybrid): 
+    • patch, configure and run commands at scale
+    • Helps you manage your EC2 and On-Premises systems at scale
+    • Most important features are:
+         • Patching automation for enhanced compliance
+         • Run commands across an entire fleet of servers 
+         • Store parameter configuration with the SSM Parameter Store
+### OpsWorks (hybrid): 
+    • Managed Chef and Puppet in AWS
+    • Chef & Puppet help you perform server configuration automatically, or repetitive actions
+    • They work great with EC2 & On-Premises VM
+    • AWS OpsWorks = Managed Chef & Puppet
+    • It’s an alternative to AWS SSM
+    
+
