@@ -631,3 +631,93 @@
 ### Amazon MQ:
     • Managed Apache MQ in the cloud (MQTT, AMQP.. protocols)
     • Useful when migrating to the cloud
+## Monitoring Summary
+### CloudWatch:
+    • Metrics: monitor the performance of AWS services and billing metrics
+    • Important Metrics 
+         • EC2 instances: CPU Utilization, Status Checks, Network (not RAM)
+         • Default metrics every 5 minutes
+         • Option for Detailed Monitoring ($$$): metrics every 1 minute
+         • EBS volumes: Disk Read/Writes
+         • S3 buckets: BucketSizeBytes, NumberOfObjects, AllRequests
+         • Billing:Total Estimated Charge (only in us-east-1)
+         • Service Limits: how much you’ve been using a service API
+         • Custom metrics: push your own metrics
+    • Alarms: automate notification, perform EC2 action, notify to SNS based on metric
+    • Logs: collect log files from EC2 instances, servers, Lambda functions…
+        • The CloudWatch log agent can be setup on-premises too
+    • Events (or EventBridge): react to events in AWS, or trigger a rule on a schedule
+### CloudTrail: 
+    • Provides governance, compliance and audit API calls made within your AWS account
+    • A trail can be applied to All Regions (default) or a single Region.
+    • If a resource is deleted in AWS, investigate CloudTrail first!
+    • CloudTrail is enabled by default!
+### CloudTrail Insights: 
+    • automated analysis of your CloudTrail Events
+### X-Ray: 
+    • Trace requests made through your distributed applications
+    • AWS X-Ray advantages
+    • Troubleshooting performance (bottlenecks) 
+    • Understand dependencies in a microservice architecture 
+    • Pinpoint service issues • Review request behavior 
+    • Find errors and exceptions 
+    • Are we meeting time SLA? 
+    • Where I am throttled? 
+    • Identify users that are impacted
+### Service Health Dashboard: 
+    • status of all AWS services across all regions
+    • Shows all regions, all services health
+    • Shows historical information for each day
+### Personal Health Dashboard: 
+    • AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you.
+    • AWS events that impact your infrastructure
+    • Shows how AWS outages directly impact you & your AWS resources
+    • Alert, remediation, proactive, scheduled activities
+## VPC Section
+### VPC -Virtual Private Cloud: 
+    • private network to deploy your resources (regional resource)
+    • Subnets:allow you to partition your network inside your VPC (Availability Zone resource)
+    • A public subnet is a subnet that is accessible from the internet
+    • A private subnet is a subnet that is not accessible from the internet
+    • To define access to the internet and between subnets, we use Route Tables
+### Internet Gateway: 
+    • Internet Gateways helps our VPC instances connect with the internet
+    • Public Subnets have a route to the internet gateway
+### NAT Gateway / Instances: 
+    • NAT Gateways (AWS-managed) & NAT Instances (self-managed) allow your instances in your Private Subnets to access the internet while remaining private
+### NACL: 
+    • Stateless, subnet rules for inbound and outbound
+    • A firewall which controls traffic from and to subnet
+    • Can have ALLOW and DENY rules
+    • Are attached at the Subnet level
+    • Rules only include IP addresses
+### Security Groups: 
+    • Stateful, operate at the EC2 instance level or ENI
+    • A firewall that controls traffic to and from an ENI / an EC2 Instance
+    • Can have only ALLOW rules
+    • Rules include IP addresses and other security groups
+### VPC Peering: 
+    • Connect two VPC with non overlapping IP ranges, non-transitive
+    • Must not have overlapping CIDR (IP address range)
+### VPC Endpoints: 
+    • Endpoints allow you to connect to AWS Services using a private network instead of the public www network
+    • VPC Endpoint Gateway: S3 & DynamoDB
+    • VPC Endpoint Interface: the rest
+### VPC Flow Logs: 
+    • network traffic logs
+### Site to Site VPN: 
+    • VPN over public internet between on-premises DC and AWS
+    • The connection is automatically encrypted
+    • Goes over the public internet
+### Direct Connect: 
+    • Direct private connection to AWS
+    • Establish a physical connection between on-premises and AWS
+    • The connection is private, secure and fast
+    • Goes over a private network    
+### Site-to-Site VPN
+    • On-premises: must use a Customer Gateway (CGW)
+    • AWS: must use a Virtual Private Gateway (VGW)
+### Transit Gateway: 
+    • For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection
+
+    
