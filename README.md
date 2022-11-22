@@ -719,5 +719,131 @@
     • AWS: must use a Virtual Private Gateway (VGW)
 ### Transit Gateway: 
     • For having transitive peering between thousands of VPC and on-premises, hub-and-spoke (star) connection
-
     
+## Security & Compliance Section
+### Shared Responsibility on AWS
+    • AWS responsibility - Security of the Cloud
+       • Protecting infrastructure (hardware, software, facilities, and networking) that runs all the AWS services
+       • Managed services like S3, DynamoDB, RDS, etc.
+    • Customer responsibility - Security in the Cloud
+       • For EC2 instance, customer is responsible for management of the guest OS (including security patches and updates), firewall & network configuration, IAM 
+       • Encrypting application data 
+    • Shared controls:
+       • Patch Management, Configuration Management, Awareness & Training
+![Shared Responsibility model](https://user-images.githubusercontent.com/62194896/203288445-9e458622-d800-427f-9b7e-d359a9b4d846.png)
+
+### DDOS Protection on AWS
+    • Shield: Automatic DDoS Protection + 24/7 support for advanced
+    • AWS Shield Standard: 
+       • protects against DDOS attack for your website and applications, for all customers at no additional costs
+       • Provides protection from attacks such as SYN/UDP Floods, Reflection attacks and other layer 3/layer 4 attacks
+    • AWS Shield Advanced: 24/7 premium DDoS protection
+    • AWS WAF: Filter specific requests based on rules
+       • Protects your web applications from common web exploits (Layer 7)
+       • Layer 7 is HTTP (vs Layer 4 is TCP)
+       • Deploy on Application Load Balancer, API Gateway, CloudFront
+    • CloudFront and Route 53: 
+         • Availability protection using global edge network
+         • Combined with AWS Shield, provides attack mitigation at the edge
+    • Define Web ACL (Web Access Control List):
+         • Rules can include IP addresses, HTTP headers, HTTP body, or URI strings
+         • Protects from common attack - SQL injection and Cross-Site Scripting (XSS)
+         • Size constraints, geo-match (block countries)
+         • Rate-based rules (to count occurrences of events) – for DDoS protection
+### Penetration Testing :
+     • AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services:
+        • Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
+        • Amazon RDS
+        • Amazon CloudFront
+        • Amazon Aurora
+        • Amazon API Gateways
+        • AWS Lambda and Lambda Edge functions
+        • Amazon Lightsail resources
+        • Amazon Elastic Beanstalk environments
+### KMS: 
+     • Encryption keys managed by AWS
+     • KMS = AWS manages the encryption keys for us(Software)
+     • Encryption Opt-in:
+        • EBS volumes: encrypt volumes
+        • S3 buckets: Server-side encryption of objects
+        • Redshift database: encryption of data
+        • RDS database: encryption of data
+        • EFS drives: encryption of data
+     • Encryption Automatically enabled: 
+        • CloudTrail Logs
+        • S3 Glacier
+        • Storage Gateway
+### CloudHSM: 
+    • Hardware encryption, we manage encryption keys
+### Types of Customer Master Keys: CMK
+    • Customer Managed CMK:
+         • Create, manage and used by the customer, can enable or disable
+         • Possibility of rotation policy (new key generated every year, old key preserved)
+         • Possibility to bring-your-own-key 
+    • AWS managed CMK:
+         • Created, managed and used on the customer’s behalf by AWS
+         • Used by AWS services (aws/s3, aws/ebs, aws/redshift)
+    • AWS owned CMK:
+         • Collection of CMKs that an AWS service owns and manages to use in multiple accounts
+         • AWS can use those to protect resources in your account (but you can’t view the keys)
+    • CloudHSM Keys (custom keystore): 
+         • Keys generated from your own CloudHSM hardware device
+         • Cryptographic operations are performed within the CloudHSM cluster
+### AWS Secrets Manager
+    • Newer service, meant for storing secrets
+    • Capability to force rotation of secrets every X days
+    • Secrets are encrypted using KMS
+### Artifact(not a service): 
+    • Get access to compliance reports such as PCI, ISO, etc…
+    • Portal that provides customers with on-demand access to AWS compliance documentation and AWS agreement
+    • Can be used to support internal audit or compliance
+### GuardDuty: 
+    • Intelligent Threat discovery to Protect AWS Account 
+    • Uses Machine Learning algorithms, anomaly detection, 3rd party data
+    • One click to enable (30 days trial), no need to install software
+    • Can setup CloudWatch Event rules to be notified in case of findings
+![GuardDuty](https://user-images.githubusercontent.com/62194896/203292053-10b9c554-b8d0-4a1e-b411-f927f72eff89.png)
+
+### Inspector: 
+    • For EC2 only, install agent and find vulnerabilities
+    • Automated Security Assessments for EC2 instances 
+    • Analyze the running OS against known vulnerabilities
+    • Analyze against unintended network accessibility
+    • AWS Inspector Agent must be installed on OS in EC2 instances
+### AWS Config:
+    • Helps with auditing and recording compliance of your AWS resources
+    • Helps record configurations and changes over time
+### Macie :
+    • Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
+    • Macie helps identify and alert you to sensitive data, such as personally identifiable information (PII)
+### Security Hub :
+    • Central security tool to manage security across several AWS accounts and automate security checks
+    • Integrated dashboards showing current security and compliance status to quickly take actions
+### Amazon Detective :
+    • Sometimes security findings require deeper analysis to isolate the root cause and take action – it’s a complex process
+    • Amazon Detective analyzes, investigates, and quickly identifies the root cause of security issues or suspicious activities (using ML and graphs)
+    • Automatically collects and processes events from VPC Flow Logs, CloudTrail, GuardDuty and create a unified view
+### AWS Abuse :
+    • Report suspected AWS resources used for abusive or illegal purposes
+    • Abusive & prohibited behaviors are:
+        • Spam
+        • Port scanning
+        • DoS or DDoS attacks
+        • Intrusion attempts
+        • Hosting objectionable or copyrighted content
+        • Distributing malware
+### Root user privileges
+    • Root user = Account Owner (created when the account is created)
+    • Has complete access to all AWS services and resources
+    • Lock away your AWS account root user access keys!
+    • Do not use the root account for everyday tasks, even administrative tasks
+    • Actions that can be performed only by the root user:
+          • Change account settings (account name, email address, root user password, root user access keys)
+          • View certain tax invoices
+          • Close your AWS account
+          • Restore IAM user permissions
+          • Change or cancel your AWS Support plan
+          • Register as a seller in the Reserved Instance Marketplace
+          • Configure an Amazon S3 bucket to enable MFA
+          • Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID
+          • Sign up for GovCloud
