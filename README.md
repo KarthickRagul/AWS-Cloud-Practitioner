@@ -847,3 +847,13 @@
           • Configure an Amazon S3 bucket to enable MFA
           • Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID
           • Sign up for GovCloud
+
+### Machine Learning Section
+     • Rekognition: face detection, labeling, celebrity recognition
+     • Transcribe: audio to text (ex: subtitles)
+     • Polly: text to audio
+     • Translate: translations
+     • Lex: build conversational bots – chatbots 
+     • Connect: cloud contact center
+     • Comprehend: natural language processing
+     • SageMaker: machine learning for every developer and data scientist
